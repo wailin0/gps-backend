@@ -2,46 +2,6 @@ const Sequelize = require("sequelize")
 const sequelize = require("./../utils/database")
 
 const GPS = sequelize.define('gps', {
-    hour: {
-        type: Sequelize.INTEGER.UNSIGNED,
-        allowNull: false
-    },
-    minute: {
-        type: Sequelize.INTEGER.UNSIGNED,
-        allowNull: false
-    },
-    second: {
-        type: Sequelize.INTEGER.UNSIGNED,
-        allowNull: false
-    },
-    year: {
-        type: Sequelize.INTEGER.UNSIGNED,
-        allowNull: false
-    },
-    month: {
-        type: Sequelize.INTEGER.UNSIGNED,
-        allowNull: false
-    },
-    day: {
-        type: Sequelize.INTEGER.UNSIGNED,
-        allowNull: false
-    },
-    status: {
-        type: Sequelize.CHAR,
-        allowNull: false
-    },
-    NSInd: {
-        type: Sequelize.CHAR,
-        allowNull: false
-    },
-    EWInd: {
-        type: Sequelize.CHAR,
-        allowNull: false
-    },
-    reserve: {
-        type: Sequelize.CHAR,
-        allowNull: false
-    },
     longitude: {
         type: Sequelize.DECIMAL(9, 6),
         allowNull: false
@@ -50,14 +10,14 @@ const GPS = sequelize.define('gps', {
         type: Sequelize.DECIMAL(9, 6),
         allowNull: false
     },
-    speed: {
-        type: Sequelize.FLOAT,
-        allowNull: false
+    createdAt: {
+        type: Sequelize.DATE,
+        defaultValue: sequelize.literal('NOW()')
     },
-    angle: {
-        type: Sequelize.FLOAT,
-        allowNull: false
-    },
+    updatedAt: {
+        type: Sequelize.DATE,
+        defaultValue: sequelize.literal('NOW()')
+    }
 })
 
 module.exports = GPS

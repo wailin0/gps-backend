@@ -13,5 +13,3 @@ To Start Server:
 Default port is 4000. change port in app.js
 
 To Change database go to the folder src/utils/database.js
-
-Example postman collection is include in root folder 
